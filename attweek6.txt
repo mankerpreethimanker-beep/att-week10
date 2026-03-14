@@ -1,0 +1,30 @@
+package ATT5CH;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class week6 {
+
+public static void main(String[] args) throws InterruptedException {
+// TODO Auto-generated method stub
+ChromeDriver driver=new ChromeDriver();
+driver.manage().window().maximize();
+driver.get(" https://duckduckgo.com/");
+Thread.sleep(2000);
+driver.findElement(By.name("q")).sendKeys("ajio\n");
+Thread.sleep(2000);
+driver.findElement(By.xpath( "//h3[text()='Women']")).click();
+Thread.sleep(2000);
+driver.findElement(By.xpath( "//span[text()='Sign In / Join AJIO']")).click();
+Thread.sleep(2000);
+
+driver.findElement(By.xpath("//input[@id=\"mobileNumber\"]")).sendKeys("8143504114");
+Thread.sleep(2000);
+
+driver.findElement(By.xpath( " //input[@class=\"login-btn\"]")).click();
+Thread.sleep(2000);
+
+
+}
+
+}
