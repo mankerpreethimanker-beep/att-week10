@@ -1,0 +1,39 @@
+package ATT5CH;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class week8 {
+
+public static void main(String[] args) throws InterruptedException, AWTException {
+// TODO Auto-generated method stub
+ChromeDriver driver=new ChromeDriver();
+driver.manage().window().maximize();
+driver.get(" https://duckduckgo.com/");
+Thread.sleep(2000);
+driver.findElement(By.xpath("//input[@id='searchbox_input']")).sendKeys("CMRIT Hyderabad\n");
+driver.findElement(By.xpath("//a[text()='Images']")).click();
+Thread.sleep(1500);
+WebElement image = driver.findElement(By.xpath("(//img[@alt=\"CMR Institute of Technology | Top Engineering College in Hyderabad\"])[1]"
++ ""));
+image.click();
+Actions action=new Actions(driver);
+action.contextClick(image).build().perform();
+Robot robo=new Robot();
+robo.keyPress(KeyEvent.VK_DOWN);
+Thread.sleep(1000);
+robo.keyPress(KeyEvent.VK_DOWN);
+Thread.sleep(1000);
+robo.keyPress(KeyEvent.VK_ENTER);
+robo.keyRelease(KeyEvent.VK_ENTER);
+Thread.sleep(1000);
+robo.keyPress(KeyEvent.VK_ENTER);
+robo.keyRelease(KeyEvent.VK_ENTER);
+Thread.sleep(1000);
+}
