@@ -1,0 +1,43 @@
+package ATT5CH;
+
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class week5 {
+
+public static void main(String[] args) throws InterruptedException {
+// TODO Auto-generated method stub
+ChromeDriver driver=new ChromeDriver();
+driver.manage().window().maximize();
+driver.get(" https://duckduckgo.com/");
+Thread.sleep(2000);
+driver.findElement(By.name("q")).sendKeys("cmrit hyderabad \n");
+Thread.sleep(2000);
+driver.findElement(By.xpath(" //span[text()='CMR Institute Of Technology - Top Engineering Colleges in Hyderabad']")).click();
+Thread.sleep(2000);
+driver.findElement(By.xpath("//button[@id=\"closePopup\"]")).click();
+Thread.sleep(2000);
+driver.findElement(By.xpath(" (//span[@class=\"sub-arrow\"])[3]")).click();
+Thread.sleep(2000);
+driver.findElement(By.xpath(" (//span[@class=\"sub-arrow\"])[4]")).click();
+Thread.sleep(2000);
+driver.findElement(By.xpath(" (//a[text()='B.Tech Syllabus'])[1]")).click();
+Thread.sleep(2000);
+driver.findElement(By.xpath(" //a[text()='B.Tech. Computer Science and Engineering (AI&ML)']")).click();
+Thread.sleep(2000);
+Set<String> LastTab=driver.getWindowHandles();
+String NewTab=null;
+for(String h:LastTab)
+NewTab=h;
+if(NewTab !=null)
+driver.switchTo().window(NewTab);
+driver.findElement(By.xpath(" (//div[@class=\"pYTkkf-Bz112c-RLmnJb\"])[1]")).click();
+Thread.sleep(2000);
+}
+
+
+
+}
+
